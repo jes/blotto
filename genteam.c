@@ -2,7 +2,7 @@
 
    http://www.amsta.leeds.ac.uk/~pmt6jrp/personal/blotto.html
 
-   By James Stanley */
+   James Stanley 2009 */
 
 #include <stdlib.h>
 #include <string.h>
