@@ -33,10 +33,10 @@ Compiling the programs is very simple, just run
   `$ make`  
 and the files `blotto` and `genteam` will be created. You can use these programs
 where they are if you wish, or you can install them with  
-  `$ make install`
+  `$ make install`  
 
-If you wish to install in to a different prefix, use, for example:
-  `$ make PREFIX=/usr/local install`
+If you wish to install in to a different prefix, use, for example:  
+  `$ make PREFIX=/usr/local install`  
 
 You can also set DESTDIR, for example to install somewhere under /opt.
 
@@ -46,14 +46,14 @@ The `blotto` program runs a round-robin tournament between a number of colonels,
 and outputs a nice table of results at the end. The program assigns 2 points for
 a win and 1 for a draw.
 
-Running the game described above between Alice and Bob could go as follows.
-  `$ blotto 10 100`
+Running the game described above between Alice and Bob could go as follows.  
+  `$ blotto 10 100`  
 to start the program with 10 battlefields and 100 soldiers per colonel. Next,
 instructions to the operator will be printed because stdin is an interactive
-terminal. The armies would be input, as
-  `alice 10 10 10 10 10 10 10 10 10 10`
-and
-  `bob 12 8 12 8 12 8 12 8 12 8`
+terminal. The armies would be input, as  
+  `alice 10 10 10 10 10 10 10 10 10 10`  
+and  
+  `bob 12 8 12 8 12 8 12 8 12 8`  
 After the armies are input, the user must generate an EOF, which is usually
 achieved by typing Ctrl-D.
 
@@ -65,17 +65,17 @@ and then print out a nicely-formatted table of results.
 The `genteam` program generates a number of randomly-generated teams and outputs
 in a format suitable for piping directly to the input of `blotto`.
 
-To generate one random team for the usual 10/100 configuration, run
-  `$ genteam 10 100`
-and you will get something like
-  `team1 10 9 11 13 11 13 4 14 8 7`
+To generate one random team for the usual 10/100 configuration, run  
+  `$ genteam 10 100`  
+and you will get something like  
+  `team1 10 9 11 13 11 13 4 14 8 7`  
 
 If you want a lot more teams, append the number of teams you want to the command
-line arguments, for example
-  `$ genteam 10 100 5`
+line arguments, for example  
+  `$ genteam 10 100 5`  
 would generate 5 random teams.
 
-If you want to run a tournament between 5 teams, you can run
+If you want to run a tournament between 5 teams, you can run  
   `$ genteam 10 100 5 | blotto 10 100`
 
 ## 5. Contact
