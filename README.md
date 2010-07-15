@@ -4,7 +4,7 @@ Colonel Blotto is a game in which a number of colonels are to arrange their
 soldiers over a number of battlefields. Each colonel has equally many soldiers
 and the number of battlefields is the same for each battle.
 
-There is a git repository at http://github.com/jes/blotto.
+There is a git repository at [github](http://github.com/jes/blotto).
 
   1. The game
   2. Compiling
@@ -14,8 +14,8 @@ There is a git repository at http://github.com/jes/blotto.
 
 ## 1. The game
 
-A rather excellent description of the game can be found at
-http://www.amsta.leeds.ac.uk/~pmt6jrp/personal/blotto.html.
+A rather excellent description of the game can be found on Jonathan Partington's
+[site](http://www.amsta.leeds.ac.uk/~pmt6jrp/personal/blotto.html).
 
 For the common configuration of the game, in which there are 10 battlefields and
 100 soldiers, each colonel assigns a number of soldiers to each battlefield. For
