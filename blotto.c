@@ -127,8 +127,8 @@ int main(int argc, char **argv) {
 
   /* if stdin is a terminal, give the user instructions and an example */
   if(isatty(fileno(stdin))) {
-      fprintf(stderr, "Enter the army arrangements, ending with EOF, in the "
-              "form 'player_name %d", soldiers);
+    fprintf(stderr, "Enter the army arrangements, ending with EOF (Ctrl-D "
+            "usually causes EOF), in the form 'player_name %d", soldiers);
       for(i = 1; i < battlefields; i++) {
         fputs(" 0", stderr);
       }
@@ -153,7 +153,8 @@ int main(int argc, char **argv) {
     memset(&player[players], 0, sizeof(Player));
     player[players].soldiers = malloc(sizeof(int) * battlefields);
     if(parse_name(&player[players], input) == -1) {
-      fprintf(stderr, "Parse error in '%s'. Continuing anyway...\n", input);
+      fprintf(stderr, "Parse error in '%s'. Ignoring line...\n", input);
+      continue;
     }
 
     /* find longest player name */
