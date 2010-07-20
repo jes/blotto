@@ -1,7 +1,7 @@
 /* Runs a round-robin blotto tournament
 
-   http://www.geocities.com/j_r_partington/blotto.html
    http://www.amsta.leeds.ac.uk/~pmt6jrp/personal/blotto.html
+   http://www.geocities.com/j_r_partington/blotto.html
 
    James Stanley 2009 */
 
