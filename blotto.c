@@ -15,10 +15,10 @@
 #include <ctype.h>
 
 typedef struct {
-	char *name;
-	int *soldiers;
-	int points;
-	int win, draw, lose;
+	char	*name;
+	int	*soldiers;
+	int	points;
+	int	win, draw, lose;
 } Player;
 
 int battlefields, soldiers;
@@ -26,7 +26,7 @@ int battlefields, soldiers;
 /* returns the rounded-down integer log10 of n
    intlog10(0) returns -1 */
 int intlog10(int n) {
-	int k, log;
+	int	k, log;
 
 	for(k = 1, log = -1; n > k; k *= 10) log++;
 
@@ -41,10 +41,10 @@ int player_sort(const void *a, const void *b) {
 
 /* parses the input given in input in to the proper Player structure */
 int parse_name(Player *p, char *input) {
-	char *ptr;
-	char *ptr2;
-	int i;
-	int total = 0;
+	char	*ptr;
+	char	*ptr2;
+	int	i;
+	int	total = 0;
 
 	p->name = NULL;
 
@@ -94,16 +94,16 @@ int parse_name(Player *p, char *input) {
 }
 
 int main(int argc, char **argv) {
-	int i, j;
-	Player *player = NULL;
-	int players = 0;
-	char *input = NULL;
-	char *p;
-	size_t len = 0;
-	int p1, p2;
-	int score;
-	int widthpos, widthname = 0, widthw, widthd, widthl, widthpts, widthsol;
-	int maxwin = 0, maxdraw = 0, maxlose = 0, maxsol = 0;
+	int	i, j;
+	Player	*player	= NULL;
+	int	players	= 0;
+	char	*input	= NULL;
+	char	*p;
+	size_t	len = 0;
+	int	p1, p2;
+	int	score;
+	int	widthpos, widthname = 0, widthw, widthd, widthl, widthpts, widthsol;
+	int	maxwin = 0, maxdraw = 0, maxlose = 0, maxsol = 0;
 
 	if(argc != 3) {
 		fprintf(stderr,
@@ -118,8 +118,8 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	battlefields = atoi(argv[1]);
-	soldiers = atoi(argv[2]);
+	battlefields	= atoi(argv[1]);
+	soldiers	= atoi(argv[2]);
 
 	if(battlefields < 1 || soldiers < 1) {
 		fprintf(stderr, "Need at least 1 battlefield and at least 1 soldier.\n");
@@ -202,26 +202,26 @@ int main(int argc, char **argv) {
 
 	/* find highest wins, draws, and losses */
 	for(i = 0; i < players; i++) {
-		if(player[i].win > maxwin) maxwin = player[i].win;
-		if(player[i].draw > maxdraw) maxdraw = player[i].draw;
-		if(player[i].lose > maxlose) maxlose = player[i].lose;
+		if(player[i].win > maxwin)	maxwin	= player[i].win;
+		if(player[i].draw > maxdraw)	maxdraw	= player[i].draw;
+		if(player[i].lose > maxlose)	maxlose	= player[i].lose;
 	}
 
 	/* sort by points */
 	qsort(player, players, sizeof(Player), player_sort);
 
 	/* width of number fields */
-	widthpos = intlog10(players) + 1;
-	widthw = intlog10(maxwin) + 1;
-	widthd = intlog10(maxdraw) + 1;
-	widthl = intlog10(maxlose) + 1;
-	widthpts = intlog10(player[0].points) + 1;
-	widthsol = intlog10(maxsol) + 1;
+	widthpos	= intlog10(players) + 1;
+	widthw	= intlog10(maxwin) + 1;
+	widthd	= intlog10(maxdraw) + 1;
+	widthl	= intlog10(maxlose) + 1;
+	widthpts	= intlog10(player[0].points) + 1;
+	widthsol	= intlog10(maxsol) + 1;
 
 	/* these must be wide enough for their headings */
-	if(widthpos < 3) widthpos = 3;
-	if(widthname < 4) widthname = 4;
-	if(widthpts < 3) widthpts = 3;
+	if(widthpos < 3)	widthpos = 3;
+	if(widthname < 4)	widthname = 4;
+	if(widthpts < 3)	widthpts = 3;
 
 	/* print out table heading */
 	printf("%*s  %-*s  %*s  %*s  %*s  %*s  Soldiers\n",

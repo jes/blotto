@@ -10,10 +10,10 @@
 #include <time.h>
 
 int main(int argc, char **argv) {
-	int teams = 1;
-	int battlefields, soldiers;
-	int i, j;
-	int *numsoldiers;
+	int	teams = 1;
+	int	battlefields, soldiers;
+	int	i, j;
+	int	*numsoldiers;
 
 	if(argc != 3 && argc != 4) {
 		fprintf(stderr, "Usage: %s battlefields soldiers [teams]\n\n"
@@ -25,8 +25,9 @@ int main(int argc, char **argv) {
 
 	srand(time(NULL));
 
-	battlefields = atoi(argv[1]);
-	soldiers = atoi(argv[2]);
+	battlefields	= atoi(argv[1]);
+	soldiers	= atoi(argv[2]);
+
 	if(argc == 4) teams = atoi(argv[3]);
 
 	if(battlefields < 1 || soldiers < 1) {

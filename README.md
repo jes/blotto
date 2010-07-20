@@ -10,7 +10,8 @@ There is a git repository at [github](http://github.com/jes/blotto).
   2. Compiling
   3. Usage of blotto
   4. Usage of genteam
-  5. Contact
+  5. Elastic tabstops
+  6. Contact
 
 ## 1. The game
 
@@ -78,7 +79,15 @@ would generate 5 random teams.
 If you want to run a tournament between 5 teams, you can run  
   `$ genteam 10 100 5 | blotto 10 100`
 
-## 5. Contact
+## 5. Elastic tabstops
+
+If you read some of the source code for these programs you may notice that the
+indentation looks very strange in your editor. This is because I use
+[elastic tabstops](http://nickgravgaard.com/elastictabstops/) to have blocks of
+related code automatically align. There is a nice java applet demonstrating the
+system in the page linked.
+
+## 6. Contact
 
 If you find a bug or just want to contact me for any reason, send an email to  
   James Stanley <james@incoherency.co.uk>  
