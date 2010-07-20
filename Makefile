@@ -1,7 +1,7 @@
 #Makefile for blotto
 #James Stanley 2010
 
-CFLAGS=-Wall -O3
+CFLAGS=-Wall -O3 -g
 OUT=blotto genteam
 PREFIX?=/usr
 
