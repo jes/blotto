@@ -8,6 +8,12 @@ PREFIX?=/usr
 all: $(OUT)
 .PHONY: all
 
+blotto: blotto.c wh_getline.c
+	$(CC) $(CFLAGS) -o blotto blotto.c wh_getline.c
+
+genteam: genteam.c
+	$(CC) $(CFLAGS) -o genteam genteam.c
+
 clean:
 	-rm -f $(OUT)
 .PHONY: clean

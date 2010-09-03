@@ -23,6 +23,8 @@ typedef struct {
 
 int battlefields, soldiers;
 
+size_t wh_getline(char **lineptr, size_t *n, FILE *stream);
+
 /* replacement for GNU strndup */
 char *strdup2(const char *s, size_t n) {
   char *s2;
@@ -157,7 +159,7 @@ int main(int argc, char **argv) {
 		player = realloc(player, sizeof(Player) * (players + 1));
 
 		/* read a line, stopping on eof */
-		if(getline(&input, &len, stdin) == -1) break;
+		if(wh_getline(&input, &len, stdin) == -1) break;
 
 		/* skip blank lines */
 		if(*input == '\n') continue;
