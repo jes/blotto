@@ -23,6 +23,22 @@ typedef struct {
 
 int battlefields, soldiers;
 
+/* replacement for GNU strndup */
+char *strdup2(const char *s, size_t n) {
+  char *s2;
+
+  if(strlen(s) > n) {
+    s2 = malloc(n + 1);
+    strncpy(s2, s, n);
+    s2[n] = '\0';
+  } else {
+    s2 = malloc(strlen(s) + 1);
+    strncpy(s2, s, strlen(s));
+  }
+
+  return s2;
+}
+
 /* returns the rounded-down integer log10 of n
    intlog10(0) returns -1 */
 int intlog10(int n) {
@@ -57,7 +73,7 @@ int parse_name(Player *p, char *input) {
 	if(*ptr2 == '\0') return -1;
 
 	/* copy the name */
-	p->name = strndup(ptr, ptr2 - ptr);
+	p->name = strdup2(ptr, ptr2 - ptr);
 
 	/* now get the soldiers for all the battlefields */
 	for(i = 0; i < battlefields; i++) {
